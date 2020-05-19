@@ -10,7 +10,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  * @author gaochao
  * @create 2020-05-18 0:13
  */
-@SpringBootTest
 public class AopConfigTest {
 
   @Test

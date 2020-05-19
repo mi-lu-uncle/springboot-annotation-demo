@@ -1,7 +1,6 @@
 package com.gc.aop;
 
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang.ArrayUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
@@ -34,7 +33,7 @@ public class AspectCustom {
    */
   @Before("pointCuts()")
   public void beforeAdvice(JoinPoint jp){
-    log.info("进入前置通知 方法名{"+jp.getSignature().getName()+"} 参数列表{"+ ArrayUtils.toString(jp.getArgs()) +"}");
+    log.info("进入前置通知 方法名{"+jp.getSignature().getName()+"} 参数列表{"+ jp.getArgs() +"}");
 
   }
 
@@ -43,7 +42,7 @@ public class AspectCustom {
    */
   @After("com.gc.aop.AspectCustom.pointCuts()")
   public void afterAdvice(JoinPoint jp){
-    log.info("进入后置通知 方法名{"+jp.getSignature().getName()+"} 参数列表"+ ArrayUtils.toString(jp.getArgs()));
+    log.info("进入后置通知 方法名{"+jp.getSignature().getName()+"} 参数列表"+ jp.getArgs());
   }
 
   /**
