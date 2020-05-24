@@ -2,14 +2,12 @@ package com.gc;
 
 import com.gc.ioc.IocMainConfig;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * @author gaochao
  * @create 2020-05-18 0:15
  */
-@SpringBootTest
 public class IocMainApplicationTest {
 
   @Test

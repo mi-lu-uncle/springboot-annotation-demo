@@ -9,6 +9,7 @@
     <modules>
         <module>test-aop-demo</module>
         <module>test-ioc-demo</module>
+        <module>test-ext-demo</module>
     </modules>
     <name>springboot-annotation-demo</name>
     <description>springboot注解版源码分析demo</description>

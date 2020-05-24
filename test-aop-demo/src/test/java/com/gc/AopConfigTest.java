@@ -19,5 +19,7 @@ public class AopConfigTest {
     MacthCustom macthCustom = ioc.getBean(MacthCustom.class);
     macthCustom.match(2, 1);
 
+    ioc.close();
+
   }
 }

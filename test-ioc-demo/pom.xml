@@ -8,7 +8,7 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <description>ioc源码讲解</description>
     <artifactId>test-ioc-demo</artifactId>
 
     <dependencies>
@@ -73,6 +73,5 @@
             <optional>true</optional>
         </dependency>
     </dependencies>
-
 
 </project>
