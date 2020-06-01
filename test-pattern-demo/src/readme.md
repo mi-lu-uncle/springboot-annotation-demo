@@ -21,7 +21,7 @@
 |17.中介者模式	|Mediator Pattern|
 |18.备忘录模式	|Memento Pattern |
 |19.观察者模式	|Observer Pattern|
-|20状态模式	|State Pattern       |
+|20.状态模式	|State Pattern       |
 |21.策略模式	|Strategy Pattern|
 |22.模板方法模式	|Template Method Pattern|
 |23.访问者模式	|Visitor Pattern| 
