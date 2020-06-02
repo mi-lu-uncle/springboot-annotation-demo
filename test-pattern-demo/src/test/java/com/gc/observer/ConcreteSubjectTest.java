@@ -47,4 +47,15 @@ public class ConcreteSubjectTest {
 
     source.ring(false);
   }
+
+
+  @Test
+  void OilFuturesTest(){
+    OilFutures futures = new OilFutures();
+    futures.addObserver(new Bear());
+    futures.addObserver(new Bull());
+    futures.change(1);
+    futures.change(-2);
+
+  }
 }
