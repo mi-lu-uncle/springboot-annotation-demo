@@ -1,5 +1,8 @@
 package com.gc.ioc;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -12,7 +15,11 @@ import javax.annotation.PreDestroy;
  */
 @Component
 @Slf4j
+@Data
+@AllArgsConstructor
 public class Pig  {
+
+  private String name;
 
   public Pig(){
     log.info("Pig 构造方法...");
