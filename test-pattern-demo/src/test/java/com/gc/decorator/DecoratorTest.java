@@ -2,7 +2,7 @@ package com.gc.decorator;
 
 import org.junit.jupiter.api.Test;
 
-class DecoratorTest {
+public class DecoratorTest {
 
   @Test
   public void test01(){
