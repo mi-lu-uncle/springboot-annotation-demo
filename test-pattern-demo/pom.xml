@@ -11,8 +11,8 @@
     <description>设计模式demo</description>
 
     <artifactId>test-pattern-demo</artifactId>
-    <dependencies>
 
+    <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
