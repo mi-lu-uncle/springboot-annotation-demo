@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建组件的三种方式</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <temp-1></temp-1>
+    <temp-2></temp-2>
+    <temp-3></temp-3>
+
+</div>
+
+<div id="app1">
+    <!--私有组件,注意命名是驼峰命名,不要搞错了-->
+    <my-x></my-x>
+</div>
+
+<template id="temp-3">
+    <div>
+        <h3>{{msg}}</h3>
+    </div>
+</template>
+
+</body>
+<script type="text/javascript">
+
+//创建组件的第一种方式
+Vue.component("temp-1", {
+    data:function () {
+        return{
+            msg:"这是第一种创建组件的方式"
+        }
+    },
+    template: "<h1> {{msg}} </h1>"
+
+});
+
+//创建组件的第二种方式
+const temp_2 = Vue.extend({
+    template:"<h2>这是创建组件的第二种方式</h2>"
+});
+Vue.component("temp-2",temp_2);
+
+//创建组件的第三种方式
+Vue.component("temp-3",{
+    template: "#temp-3",
+    data:function () {
+        return{
+            msg:"这是第三种创建组件的方式"
+        }
+    }
+});
+
+var vm = new Vue({
+    el:"#app"
+});
+
+var vm1 = new Vue({
+    el:"#app1",
+    components:{
+        "myX":{
+            template:"<h4>{{msg}}</h4>",
+            data:function () {
+                return {
+                    msg:"这是私有组件"
+                }
+            }
+        }
+    }
+
+});
+</script>
+</html>
