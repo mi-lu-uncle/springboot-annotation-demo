@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prop 的练习HTML</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+<div>
+    <h3>
+        Prop 是你可以在组件上注册的一些自定义 attribute。
+    </h3>
+</div>
+<hr>
+<div>
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+Vue.component("blog-post",{
+    props:{
+        title:String,
+        likes:Number,
+        isPublished:Boolean,
+        componentId:Array,
+        author:Object,
+        callbacks:Function,
+        contactsPromise:Promise,
+        time:Date
+    },
+    template:``
+}
+);
+
+
+
+</script>
+</html>

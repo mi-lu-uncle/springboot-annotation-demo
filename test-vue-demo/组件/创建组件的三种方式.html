@@ -6,13 +6,20 @@
     <script src="../vue.js"></script>
 </head>
 <body>
+
+<div>
+    <h1>组件命名:<br>
+    1.使用 kebab-case,引入组件的时候也必须使用kebab-case;<br>
+    2.使用 KebabCase,引入组件的时候可以通过kebab-case或者KebabCase引入
+    </h1>
+</div>
+<hr>
 <div id="app">
     <temp-1></temp-1>
     <temp-2></temp-2>
     <temp-3></temp-3>
-
 </div>
-
+<hr>
 <div id="app1">
     <!--私有组件,注意命名是驼峰命名,不要搞错了-->
     <my-x></my-x>
@@ -27,7 +34,7 @@
 </body>
 <script type="text/javascript">
 
-//创建组件的第一种方式
+//创建组件的第一种方式(全局注册)
 Vue.component("temp-1", {
     data:function () {
         return{
@@ -38,13 +45,13 @@ Vue.component("temp-1", {
 
 });
 
-//创建组件的第二种方式
+//创建组件的第二种方式(全局注册)
 const temp_2 = Vue.extend({
     template:"<h2>这是创建组件的第二种方式</h2>"
 });
 Vue.component("temp-2",temp_2);
 
-//创建组件的第三种方式
+//创建组件的第三种方式(全局注册)
 Vue.component("temp-3",{
     template: "#temp-3",
     data:function () {
@@ -58,6 +65,8 @@ var vm = new Vue({
     el:"#app"
 });
 
+//局部注册组件
+//在vue文件中注册方法请参考https://www.cnblogs.com/IwishIcould/p/11693049.html
 var vm1 = new Vue({
     el:"#app1",
     components:{
