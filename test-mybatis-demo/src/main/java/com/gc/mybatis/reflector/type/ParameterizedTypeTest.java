@@ -28,9 +28,7 @@ public class ParameterizedTypeTest {
       for (Field field : fields) {
         // 打印是不是ParameterizedType类型
         System.out.println("Field name=>{"+field.getName()+"}  instance of ParameterizedType={" + (field.getGenericType() instanceof ParameterizedType)+"}");
-
       }
-
     }
 
     private static void getParameterizedTypeWithName(String name) throws NoSuchFieldException {
