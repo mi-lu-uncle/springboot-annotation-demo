@@ -40,10 +40,13 @@
         </h4>
     </div>
     <div>
+        <!--current-user是子组件,app2是父组件-->
         <current-user></current-user>
         <current-user>
+            <!--2.5以下必须使用template模板,2.5以上可以不需要使用-->
+            <!--slotprops表示引用子组件绑定的数据,其中datas为子组件中的属性名称,要和子组件中定义的名称一致-->
             <template slot-scope="slotprops">
-                {{slotprops.user.lastName}}
+                <span v-for="xx in slotprops.datas">{{xx}}-</span>
             </template>
         </current-user>
     </div>
@@ -64,15 +67,18 @@
     <slot name="left"><span>左边插槽</span></slot>
     <slot name="mid"><span>中间插槽</span></slot>
     <slot name="right"><span>右边插槽</span></slot>
-        <br>
+    <br>
     </div>
 </template>
 
 <template id="slot-demo-2">
     <div>
-        <span >
-            <slot :user="user">{{user.firstName}}</slot>
-        </span>
+        <!--将its绑定到data(名字随便取)上,然后可以在父组件中使用-->
+        <slot :datas="its">
+        <ul>
+            <li v-for="it in its">{{it}}</li>
+        </ul>
+        </slot>
     </div>
 </template>
 
@@ -93,8 +99,7 @@ var vm = new Vue({
                 }
             }
         }
-    }
-);
+    });
 
 var vm1 = new Vue({
     el:"#app1",
@@ -112,15 +117,12 @@ var vm2 = new Vue({
             template:"#slot-demo-2",
             data:function () {
                 return {
-                    user:{firstName:"高",lastName:"潮"}
+                    its:["js","java","python","go","..."]
                 }
             }
         }
-
     }
-
 });
-
 
 </script>
 </html>
