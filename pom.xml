@@ -7,15 +7,9 @@
     <artifactId>annotation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <modules>
-        <module>test-aop-demo</module>
-        <module>test-ioc-demo</module>
-        <module>test-ext-demo</module>
-        <module>test-pattern-demo</module>
-        <module>test-lock-demo</module>
-        <module>test-function-demo</module>
-        <module>test-regex-demo</module>
         <module>test-mybatis-demo</module>
         <module>test-vue-demo</module>
+        <module>test-learn-demo</module>
     </modules>
     <name>springboot-annotation-demo</name>
     <description>springboot注解版源码分析demo</description>
@@ -31,9 +25,10 @@
         <mysql.version>8.0.16</mysql.version>
         <druid.version>1.1.16</druid.version>
         <mybatis.spring.boot.version>2.0.0</mybatis.spring.boot.version>
-        <mybatis.version>3.5.0</mybatis.version>
+        <mybatis.version>3.5.5</mybatis.version>
         <spring.aop.version>5.2.1.RELEASE</spring.aop.version>
-        <hutool.version>4.0.9</hutool.version>
+        <hutool.version>5.4.1</hutool.version>
+        <commons.net.version>3.6</commons.net.version>
         <seata.version>0.9.0</seata.version>
         <druid.spring.boot.starter.version>1.1.10</druid.spring.boot.starter.version>
     </properties>
@@ -107,6 +102,12 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+            <!--使用FTP工具类时需要同时引入此包-->
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>${commons.net.version}</version>
             </dependency>
             <dependency>
                 <groupId>io.seata</groupId>

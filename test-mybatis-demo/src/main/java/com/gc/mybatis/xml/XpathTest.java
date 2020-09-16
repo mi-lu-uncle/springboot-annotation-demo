@@ -17,10 +17,9 @@ import javax.xml.xpath.*;
  */
 public class XpathTest {
 
-
   public static void main(String[] args) throws Exception {
     //创建文件 org.apache.ibatis.parsing.XPathParser.createDocument
-    DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+      DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
     //开启验证
     documentBuilderFactory.setValidating(Boolean.TRUE);
     documentBuilderFactory.setNamespaceAware(Boolean.FALSE) ;
@@ -57,11 +56,11 @@ public class XpathTest {
     XPath xpath = factory.newXPath();
 
     String txt1 = "===========查询作者为Neal Stevenson 的书的标题============";
-    printNodes(xpath,doc,"//book[author='Neal Stevenson']/title/text()",txt1);
+    printNodes(xpath,doc,"//book[author='Neal Stevenson']/title/text()",txt1);//[]表示某个节点的值
 
 
     String txt2 = "===========查询1997年之后的书的标题============";
-    printNodes(xpath,doc,"//book[@year>1997]/title/text()",txt2);
+    printNodes(xpath,doc,"//book[@year>1997]/title/text()",txt2);//@表示属性
 
 
     String txt3 = "===========查询1997年之后的书的标题和属性============";
