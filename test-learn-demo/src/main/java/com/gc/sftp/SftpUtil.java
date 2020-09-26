@@ -10,7 +10,9 @@ import org.apache.commons.logging.LogFactory;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -282,13 +284,40 @@ public class SftpUtil {
       upload(new ByteArrayInputStream(data.getBytes(DEFAULT_CHARSET)),directory,sftpFileName);
     }
 
+    // todo 上传本地文件到服务器上
+//    public void upload(String data,String directory,String sftpFileName){
+//
+//    }
+
+    /**
+     * 遍历某个目录下所有文件或目录，生成列表，不会递归遍历<br>
+     * 此方法自动过滤"."和".."两种目录
+     * @param path 遍历目录
+     * @return
+     */
+    public List<String> ls(String path){
+      final List<String> ls = new ArrayList<>();
+      try {
+        sftp.ls(path,entry -> {
+          String filename = entry.getFilename();
+          SftpATTRS attrs = entry.getAttrs();
+          ls.add(filename);
+          return ChannelSftp.LsEntrySelector.CONTINUE;
+        });
+      } catch (SftpException e) {
+        log.error("ls error {}",e);
+      }
+      return ls;
+    }
+
+
     public void close(){
       SftpUtil.close(this.sftp,this.session);
     }
   }
 
   /** jsch会话池**/
-  private static enum JschSessionPool{
+  private enum JschSessionPool{
 
     INSTANCE;
 
@@ -354,12 +383,21 @@ public class SftpUtil {
   }
 
   public static void main(String[] args) {
-    //Sftp sftp = SftpUtil.login("101.89.104.151",5422,"gdnybank","Gdbank.1234");
+    Sftp sftp = SftpUtil.login("123.56.106.192",22,"root","Fdkj2020");
 
-    //sftp.cd("/gdnybank");
+    boolean cd = sftp.cd("/gdnybank");
+    if(cd){
+      System.out.println("进入目录成功");
+    }else {
+      System.out.println("进入目录失败");
+    }
 
+    List<String> ls = sftp.ls("/root");
+    ls.forEach(System.out::println);
 
-    cn.hutool.extra.ssh.Sftp sftp1 = JschUtil.createSftp("101.89.104.151", 5422, "gdnybank", "Gdbank.1234");
+    sftp.close();
+
+    //cn.hutool.extra.ssh.Sftp sftp1 = JschUtil.createSftp("101.89.104.151", 5422, "gdnybank", "Gdbank.1234");
 
 
   }

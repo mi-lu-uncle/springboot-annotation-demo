@@ -1,4 +1,4 @@
-package com.gc.pattern.singleton;
+package com.gc.pattern.singleton.lazy;
 
 /**
  *
@@ -10,7 +10,8 @@ package com.gc.pattern.singleton;
  */
 public class LazySingleton {
 
-  private static volatile LazySingleton LAZY_SINGLETON = null;
+  // volatile
+  private static  LazySingleton LAZY_SINGLETON = null;
 
   private LazySingleton(){}//构造方法声明成私有，只能在本类内部调用，防止外部实例化
 

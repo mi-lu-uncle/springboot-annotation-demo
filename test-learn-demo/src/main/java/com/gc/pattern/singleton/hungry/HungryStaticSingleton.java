@@ -1,4 +1,4 @@
-package com.gc.pattern.singleton;
+package com.gc.pattern.singleton.hungry;
 
 /**
  * 饿汉式单例:类一加载的时候就创建一个单例，保证在调用getInstance方法之前就已经创建了一个单例
@@ -6,13 +6,18 @@ package com.gc.pattern.singleton;
  * @author gaochao
  * @create 2020-06-03 11:10
  */
-public class HungrySingleton {
+public class HungryStaticSingleton {
 
-  private static final HungrySingleton HUNGRY_SINGLETON = new HungrySingleton();
+  private static final HungryStaticSingleton HUNGRY_SINGLETON ;
 
-  private HungrySingleton(){}
+  //构造方法一定要私有,不私有的话就称不上是单例了
+  private HungryStaticSingleton(){}
 
-  public static HungrySingleton getInstance(){
-    return HUNGRY_SINGLETON;
+  /**
+   * 写法2:静态代码块
+   */
+  static {
+    HUNGRY_SINGLETON = new HungryStaticSingleton();
   }
+
 }
