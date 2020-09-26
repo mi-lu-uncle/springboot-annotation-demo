@@ -73,9 +73,9 @@
         </dependency>
         <!--dom4j依赖-->
         <dependency>
-            <groupId>dom4j</groupId>
+            <groupId>org.dom4j</groupId>
             <artifactId>dom4j</artifactId>
-            <version>1.6.1</version>
+            <version>${org.dom4j.version}</version>
         </dependency>
     </dependencies>
 
