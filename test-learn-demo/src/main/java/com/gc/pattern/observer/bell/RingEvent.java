@@ -1,4 +1,4 @@
-package com.gc.pattern.observer;
+package com.gc.pattern.observer.bell;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,9 +20,12 @@ import java.util.List;
  */
 @Getter
 @Setter
-class RingEvent extends EventObject {
+public class RingEvent extends EventObject {
 
-  private boolean sound;//true表示上课铃声,false表示下课铃声
+  /**
+   * true表示上课铃声,false表示下课铃声
+   */
+  private boolean sound;
 
   /**
    * Constructs a prototypical Event.
@@ -74,16 +77,7 @@ class BellEventSource{
 
 }
 
-/**
- * 抽象观察者类：铃声事件监听器
- */
-interface BellEventListener extends EventListener {
-  /**
-   * 听到铃声
-   * @param event
-   */
-  void hearBell(RingEvent event);
-}
+
 
 /**
  * 具体观察者:老师事件监听器

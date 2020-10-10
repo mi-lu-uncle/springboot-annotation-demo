@@ -15,23 +15,4 @@ public interface AbstractFactory {
 
   IVideo creatVideo();
 
-  public static void main(String[] args) {
-
-    AbstractFactory abstractFactory = new AbstractJavaFactory();
-
-    INote iNote ;
-    ISource iSource ;
-    IVideo iVideo ;
-
-    iNote = abstractFactory.creatNote();
-    iNote.creatNote();
-    iSource = abstractFactory.creatSource();
-    iSource.creatSource();
-    iVideo = abstractFactory.creatVideo();
-    iVideo.creatVideo();
-
-
-
-  }
-
 }

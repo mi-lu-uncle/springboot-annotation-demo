@@ -11,4 +11,6 @@ public interface LoginThirdService extends LoginService {
   String loginBySina(String id);
 
   String loginByWechat(String id);
+
+  String loginByStrategy(String id,String type);
 }
