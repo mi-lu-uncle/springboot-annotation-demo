@@ -1,7 +1,7 @@
 package com.gc.pattern.adapter.power;
 
 /**
- * 电流转换器
+ * 电流转换器:适配器
  * 类适配器:适配器和适配者是继承关系
  * @author gaochao
  * @create 2020-09-28 10:59

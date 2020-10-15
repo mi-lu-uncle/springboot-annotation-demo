@@ -8,7 +8,7 @@ import java.lang.reflect.Constructor;
  * 静态内部类单例模式
  * 利用类初始化的机制,静态内部类先于外部类加载完毕.这种方法既能保证效率,又能兼顾不造成内存浪费
  * 以上的单例模式,构造方法都只是用了{@code private}修饰符,并没有做任何处理.这里存在一个问题,那就是会被反射进行暴力破解.
- * 本类中的{@link LazyStaticSingleton#reflectorAttack()}是暴力破解的过程,所以我们需要在私有构造方法中进行处理,加上如下代码:
+ * 本类中的{@link LazyStaticSingleton#reflectorAttack()}是通过反射暴力破解单例模式的过程,因为会调用无参构造方法,所以我们需要在私有构造方法中进行处理,加上如下代码:
  * <p>
  *    if (LazyInnerClass.INSTANCE != null){
  *       throw new RuntimeException("请勿暴力破解单例:目前已经存在实例:"+LazyInnerClass.INSTANCE);
