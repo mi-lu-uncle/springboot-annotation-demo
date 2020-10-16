@@ -1,4 +1,4 @@
-package com.gc.pattern.chain;
+package com.gc.pattern.chain.demo;
 
 import java.util.ArrayList;
 import java.util.List;

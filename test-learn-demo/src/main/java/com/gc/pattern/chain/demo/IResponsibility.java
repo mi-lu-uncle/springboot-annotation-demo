@@ -1,4 +1,4 @@
-package com.gc.pattern.chain;
+package com.gc.pattern.chain.demo;
 
 /**
  * 责任链模式:抽象一个责任对象（当然可以是接口）,之所以要是抽象类或者接口,是为了让业务流转

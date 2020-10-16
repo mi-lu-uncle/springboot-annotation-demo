@@ -1,4 +1,4 @@
-package com.gc.pattern.chain;
+package com.gc.pattern.chain.demo;
 
 import lombok.extern.slf4j.Slf4j;
 
